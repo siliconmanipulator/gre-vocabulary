@@ -1,0 +1,10 @@
+{
+  "passed": 48,
+  "bundleSha256": "94f7394903e7ba951f845114bb0c449d68c2c7543270da794b43bc62b119c3a1",
+  "method": "Compiled application in isolated Node VM plus pure guided rules",
+  "visualBrowserCheck": false,
+  "physicalAndroidCheck": false,
+  "wordCount": 959,
+  "verifiedOriginalQuestions": 128,
+  "figma": "https://www.figma.com/design/luOQhAC597jcXSs7tYJZVk"
+}

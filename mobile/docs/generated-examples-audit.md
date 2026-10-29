@@ -1,0 +1,9 @@
+# User-authorized generated examples — 2026-10-26
+
+The user's latest annotation explicitly requests simple GRE-style examples for words with no ETS example. This supersedes the prior prohibition on generated examples for this specific supplement; it does not authorize changing source meanings, translations, mnemonics, synonyms, or official GRE questions/keys.
+
+`content/generated_examples.tsv` contains **613 individually written sentences**, one for each source word without an eligible ETS context. Each sentence uses its exact target term and is written against the supplied English meaning. The importer preserves that meaning as provenance, checks the target/ID and duplicate terms, and applies this fallback only when no ETS example exists.
+
+Each generated record retains **Generated practice example · not ETS** in its data metadata. At the user’s later explicit request, candidate 4 removes that visible caption from the app and prototype, uses the neutral Examples heading, and retains all provenance here and in bundled data. Existing 575 source-linked contexts for 346 words stay intact. All 959 words now have at least one example. These generated sentences are illustrative study content, not quotations or new official GRE questions, and are not used to replace source definitions or official answers in quizzes.
+
+Review: all 613 were composed individually against the supplied meanings; automated checks cover exact target inclusion, unique target records, sentence length/termination, coverage, provenance labels, unchanged source fields and no changes to official question records. These checks cannot substitute for a professional editorial assessment of every nuance. The supplement is stored separately so examples can be corrected without changing the immutable source Markdown.

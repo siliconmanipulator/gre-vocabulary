@@ -1,0 +1,16 @@
+{
+  "apk": "downloads/GRE-Ascent-1.0.1-debug.apk",
+  "sha256": "14b8865dd51673d0920275ab56c455918e297127dd079b34c0d81d86be1797dd",
+  "size": 500622,
+  "minSdk": 26,
+  "targetSdk": 35,
+  "versionName": "1.0.1",
+  "versionCode": 7,
+  "releaseSnapshot": false,
+  "package": "com.greascent.app",
+  "nativeUI": true,
+  "permissions": [],
+  "abi": "Universal DEX; no native libraries",
+  "signing": "Project-local debug key",
+  "builtUtc": "2026-10-29T19:53:38.766038+00:00"
+}

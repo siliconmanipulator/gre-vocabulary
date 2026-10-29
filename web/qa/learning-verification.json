@@ -1,0 +1,7 @@
+{
+  "passed": 28,
+  "method": "Compiled application in isolated Node VM; no browser or real progress storage",
+  "visualBrowserCheck": false,
+  "wordCount": 959,
+  "sourceAdaptations": 13
+}

@@ -1,0 +1,13 @@
+**/build/
+**/signing/
+**/toolchain/
+**/__pycache__/
+*.pyc
+*.p12
+*.jks
+*.keystore
+.env
+.env.*
+local.properties
+.DS_Store
+Thumbs.db

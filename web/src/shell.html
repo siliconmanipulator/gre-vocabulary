@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#174b3e">
+  <meta name="vocab-preview" content="false">
+  <meta name="description" content="Offline guided GRE vocabulary learning with GregMat definitions, Banglish mnemonics, typed recall and spaced revision.">
+  <title>Vocab Sprint · 32 groups. One clear plan.</title>
+  <style>/* INLINE_STYLES */</style>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <aside class="sidebar" aria-label="Main navigation">
+    <a href="#today" class="brand" aria-label="Vocab Sprint home"><span class="brand-mark" aria-hidden="true">vs<span>.</span></span><span>vocab sprint<small>YOUR VOCABULARY CLIMB</small></span></a>
+    <div class="sidebar-caption">YOUR WORKSPACE</div>
+    <nav id="navigation"></nav>
+    <div class="sidebar-bottom"><div class="offline-dot">Available offline</div><p>32 groups. 959 words.<br>A little, every day.</p><button class="text-button" data-action="help">How the sprint works <span aria-hidden="true">↗</span></button></div>
+  </aside>
+  <div class="workspace">
+    <header class="topbar"><div class="breadcrumb">YOUR VOCABULARY WORKSPACE <span id="header-day">DAY 01 / 20</span></div><div class="header-actions"><button class="icon-button" id="search-button" data-action="search" aria-label="Search vocabulary">⌕ <span class="desktop-only">Search words</span><kbd class="desktop-only">/</kbd></button><button class="icon-button" data-action="theme" id="theme-button" aria-label="Switch color theme">◐</button><span class="avatar" aria-label="Personal workspace">YOU</span></div></header>
+    <div id="storage-warning" class="storage-warning" role="alert" hidden></div>
+    <section id="review-controls" class="review-controls" aria-label="Preview and navigation controls"></section>
+    <main id="main" tabindex="-1"></main>
+    <footer class="page-footer">VOCAB SPRINT <span>Learn with context. Review with intention.</span><span>Groups 1–32 · No account needed</span></footer>
+  </div>
+  <nav id="mobile-navigation" class="mobile-nav" aria-label="Mobile navigation"></nav>
+  <dialog id="modal" aria-labelledby="modal-title"><div class="modal-heading"><h2 id="modal-title"></h2><button class="icon-button" data-action="close-modal" aria-label="Close dialog">×</button></div><div id="modal-body"></div></dialog>
+  <div id="toast" role="status" aria-live="polite" hidden></div>
+  <input type="file" id="import-file" accept="application/json,.json" hidden>
+  <script id="sprint-data" type="application/json">/* INLINE_DATA */</script>
+  <script>/* INLINE_CORE */</script>
+  <script>/* INLINE_APP */</script>
+</body>
+</html>

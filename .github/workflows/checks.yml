@@ -1,0 +1,24 @@
+name: Checks
+on: [push, pull_request, workflow_dispatch]
+permissions:
+  contents: read
+jobs:
+  portable-checks:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '17'
+      - run: python web/scripts/build.py
+      - run: node web/scripts/verify_guided.cjs
+      - run: node web/scripts/verify_learning.cjs
+      - run: python -m unittest discover -s mobile/tests -p 'test_*.py'
+      - run: python mobile/scripts/test.py
