@@ -6,6 +6,7 @@ An offline GRE vocabulary project with a native Android app and a browser compan
 
 ## Try it
 
+- **Live web app:** [Open Vocab Sprint](https://siliconmanipulator.github.io/gre-vocabulary/). [Open the isolated preview](https://siliconmanipulator.github.io/gre-vocabulary/sandbox.html).
 - **Web:** download this repository, open [`web/index.html`](web/index.html), and select **Continue**. No server, account, package installation, or API key is required.
 - **Explore safely:** open [`web/sandbox.html`](web/sandbox.html). Its sample progress is separate from normal study progress.
 - **Android:** download [`GRE-Ascent-1.0.1-debug.apk`](downloads/GRE-Ascent-1.0.1-debug.apk) using GitHub's **Download raw file** button. Requires Android 8.0 / API 26 or later. See [testing instructions](docs/TESTING.md).
