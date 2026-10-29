@@ -583,14 +583,14 @@ function toneCopy(w){
   return w.polarity_note||({'+':'This sense suggests praise or benefit. Picture a thumbs-up.',
     '-':'This sense suggests harm or discomfort. Picture a warning light.',
     '=':'This is a neutral description; context determines its tone.',
-    '?':'Sentence chara plus/minus stamp marish na! Ki ba kake bola hochhe, seta dekhe tone dhor.'}[w.polarity]);
+    '?':'Read the sentence before assigning a positive or negative tone. Check what the word describes.'}[w.polarity]);
 }
 function toneBadge(w){return `<span class="tone tone-${w.polarity==='+'?'positive':w.polarity==='-'?'negative':'neutral'}">${w.polarity==='?'?'↔':w.polarity} ${toneNames[w.polarity]}</span>`;}
 function memoryHook(w){return w.memory_hook||'';}
 function conceptMap(names,{label='',note='',progress=''}={}){
   const entries=names.map(w=>byWord[w]).filter(Boolean),anyRevealed=names.some(w=>revealedStudyWords.has(w));
-  if(names.includes('abound')&&names.includes('proliferate'))note='Abound = prochur ache · Proliferate = shongkhay bare · Burgeon = druto bere othe. Eki biryani factory-r tin alada camera shot!';
-  if(names.includes('austere')&&names.includes('ascetic'))note='Austere = kothor/simple · Spartan = luxury kom · Ascetic = nijer ichchhay bhog tyag. Tinjon eki khali hostel-e, kintu karon alada!';
+  if(names.includes('abound')&&names.includes('proliferate'))note='Abound = exist in large quantities · Proliferate = multiply · Burgeon = grow rapidly.';
+  if(names.includes('austere')&&names.includes('ascetic'))note='Austere = strict or simple · Spartan = without luxury · Ascetic = deliberately avoiding pleasure.';
   return `<section class="concept-map" aria-label="Connected vocabulary flashcards"><div class="concept-hub"><span class="eyebrow">${entries.length>1?'ONE CONNECTION · '+entries.length+' WORDS':'VOCABULARY RECALL'}</span><h2>${esc(label||'Meaning → memory → recall')}</h2>${note&&anyRevealed?`<p>${esc(note)}</p>`:''}</div>
     <div class="map-nodes nodes-${entries.length}">${entries.map(w=>{
       const open=revealedStudyWords.has(w.word);
@@ -635,7 +635,7 @@ function roundView(){
   const r=activeRound();if(!r)return heading('Ten words at a time.','A short learning round, followed by a quiz that responds to your mistakes.')+button('Start a round','study-daily');
   const names=r.groups[r.cursor]||[],pack=packFor(names),covered=r.groups.slice(0,r.page).flat().length;
   return roundHeader(r)+`<div class="round-meter"><div class="round-dots">${r.words.map((w,i)=>`<span class="${i<covered?'done':names.includes(w)?'current':''}" title="${w}">${i<covered?'✓':i+1}</span>`).join('')}</div><span>${covered} / ${r.words.length} explored</span>${studyClock()}</div>`+
-    conceptMap(names,{label:pack?.sense||'Look. Imagine. Say it once.',note:pack?.note||'',progress:(names.length>1?'Mobile-e pasher word dekhte swipe kor. ':'')+'Prottek word-er ortho ar mnemonic por. Tarpor chokh soriye nijeke meaning-ta bol.'})+
+    conceptMap(names,{label:pack?.sense||'Look. Imagine. Say it once.',note:pack?.note||'',progress:(names.length>1?'Swipe to see the adjacent word. ':'')+'Read each meaning and memory aid, then look away and recall the meaning.'})+
     studyNavigation('round-back','round-next',r.cursor===0)+`<div class="round-controls">${button('Save & take a break','open-today','btn secondary')}<span>${r.carry.length?`${r.carry.length} earlier weak words return in the quiz`:'Meaning quiz follows this short round'}</span>${r.phase!=='learn'?button(r.phase==='done'?'Back to result →':'Resume meaning quiz →','resume-round-quiz'):''}</div>`;
 }
 function roundBack(){const r=activeRound();if(!r||r.cursor<=0)return;r.cursor--;resetStudyReveal();save();render();window.scrollTo({top:0,behavior:'instant'});}
@@ -716,7 +716,7 @@ function learningTick(){
 }
 function weakRecallCard(){
   const pool=recallWords(),word=pool[weakCursor%pool.length];
-  if(!word)return `<div class="eyebrow">YOUR PERSONAL RECALL QUEUE</div><h3>No weak words yet.</h3><p>Quiz-e je word prothom cheshtay atke jabe, tar mnemonic ekhane fire ashbe.</p>${button('Start a learning round','study-daily','btn secondary')}`;
+  if(!word)return `<div class="eyebrow">YOUR PERSONAL RECALL QUEUE</div><h3>No weak words yet.</h3><p>Words missed on the first quiz attempt will return here with their memory aids.</p>${button('Start a learning round','study-daily','btn secondary')}`;
   const w=byWord[word];return `<div class="flex between"><span class="eyebrow">NEEDS ANOTHER LOOK</span><span class="small muted">${weakCursor%pool.length+1} / ${pool.length}</span></div><h3>${w.word}</h3>${toneBadge(w)}<p>${esc(state.customMnemonics[w.word]||w.mnemonic_bn)}</p><details><summary>Recall the meaning, then check</summary><p>${esc(w.gregmat_meaning)}</p></details><div class="flex wrap mt">${button('Practice this word','weak-practice','btn secondary',`data-word="${w.word}"`)}${button('Next','weak-next','text-button')}${button(weakPaused?'Play':'Pause','weak-pause','text-button')}</div>`;
 }
 function todayView(){

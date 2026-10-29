@@ -1,6 +1,6 @@
 {
   "passed": 48,
-  "bundleSha256": "94f7394903e7ba951f845114bb0c449d68c2c7543270da794b43bc62b119c3a1",
+  "bundleSha256": "e10d14f62925dcfd36320e87f6536ae5fc32a1eca94fce2b83e771607e4c4dda",
   "method": "Compiled application in isolated Node VM plus pure guided rules",
   "visualBrowserCheck": false,
   "physicalAndroidCheck": false,

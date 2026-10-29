@@ -4,6 +4,6 @@
   "method": "Both generated HTML bundles in isolated Node VM; synthetic storage and DOM",
   "realProgressIsolation": true,
   "sourceQuestionsUnchanged": true,
-  "mainBundleSha256": "94f7394903e7ba951f845114bb0c449d68c2c7543270da794b43bc62b119c3a1",
-  "previewBundleSha256": "fd776c11807917838d9ea5484034b91e411cdb493154b3413a6bb4304fa381fa"
+  "mainBundleSha256": "e10d14f62925dcfd36320e87f6536ae5fc32a1eca94fce2b83e771607e4c4dda",
+  "previewBundleSha256": "758aff7834846c878017abdccf73184484cd3731ef6f5764da9c00daa7e2ced6"
 }
